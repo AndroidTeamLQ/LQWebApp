@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">五福娱乐</string>
+    <string name="app_name_fun">五福娱乐</string>
+    <string name="app_name_lottery">五福彩票</string>
+    <string name="app_name_ssc">时时彩</string>
+    <string name="app_name_bjsc">北京赛车pk10</string>
+    <string name="app_name_pcdd">pc蛋蛋28</string>
+    <string name="app_name_k3">快三</string>
 </resources>

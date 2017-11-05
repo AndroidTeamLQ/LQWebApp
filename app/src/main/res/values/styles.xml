@@ -10,11 +10,21 @@
 
 
     <!--闪屏页-->
-    <style name="AppTheme2" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme_splash_fun" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/transparent</item>
-        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
-        <!--<item name="colorAccent">@color/colorAccent</item>-->
+        <item name="colorPrimaryDark">@color/transparent</item>
+        <item name="colorAccent">@color/transparent</item>
         <item name="android:windowBackground">@mipmap/splash_bg</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
+    <!--闪屏页-->
+    <style name="AppTheme_splash_lottery" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/transparent</item>
+        <item name="colorPrimaryDark">@color/transparent</item>
+        <item name="colorAccent">@color/transparent</item>
+        <item name="android:windowBackground">@mipmap/splash_bg_lottery</item>
         <item name="android:windowNoTitle">true</item>
     </style>
 

@@ -10,7 +10,6 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         ndk {
             //选择要添加的对应cpu类型的.so库。
@@ -22,13 +21,17 @@ android {
                 JPUSH_PKGNAME : applicationId,
                 JPUSH_APPKEY : "ba9a8513382ea03960b9d551", //JPush上注册的包名对应的appkey.
                 JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+                app_icon      : "@mipmap/app_icon_fun",
+                package_name  : "@string/app_name_fun",
+                theme_splash  : "@style/AppTheme_splash_fun",
+                CHANNEL_VALUE : "0001",
         ]
+        buildConfigField "String", "product", "\"01\""
 
     }
 
     signingConfigs {
         try {
-
             releaseSign {
                 storeFile file("../weblottery.jks")
                 storePassword KEYSTORE_PASSWORD
@@ -46,11 +49,103 @@ android {
             minifyEnabled false
             debuggable false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        //五福娱乐  0001 - 0100
+        releaseFun {
+            signingConfig signingConfigs.releaseSign
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             applicationIdSuffix ".fun"
             manifestPlaceholders = [
                     JPUSH_PKGNAME : "com.androidweblottery.fun",
+                    app_icon      : "@mipmap/app_icon_fun",
+                    package_name  : "@string/app_name_fun",
+                    theme_splash  : "@style/AppTheme_splash_fun",
+                    CHANNEL_VALUE : "0001",
             ]
+            buildConfigField "String", "product", "\"01\""
         }
+        //五福彩票  0101 - 0200
+        releaseLottery {
+            signingConfig signingConfigs.releaseSign
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            applicationIdSuffix ".lottery"
+            manifestPlaceholders = [
+                    JPUSH_PKGNAME : "com.androidweblottery.lottery",
+                    app_icon      : "@mipmap/app_icon_lottery",
+                    package_name  : "@string/app_name_lottery",
+                    theme_splash  : "@style/AppTheme_splash_lottery",
+                    CHANNEL_VALUE : "0101",
+            ]
+            buildConfigField "String", "product", "\"02\""
+        }
+        //时时彩 0201 - 0300
+        releaseSSC {
+            signingConfig signingConfigs.releaseSign
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            applicationIdSuffix ".ssc"
+            manifestPlaceholders = [
+                    JPUSH_PKGNAME : "com.androidweblottery.ssc",
+                    app_icon      : "@mipmap/app_icon_ssc",
+                    package_name  : "@string/app_name_ssc",
+                    theme_splash  : "@style/AppTheme_splash_lottery",
+                    CHANNEL_VALUE : "0201",
+            ]
+            buildConfigField "String", "product", "\"03\""
+        }
+        //北京赛车 0301 - 0400
+        releaseBJSC {
+            signingConfig signingConfigs.releaseSign
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            applicationIdSuffix ".bjsc"
+            manifestPlaceholders = [
+                    JPUSH_PKGNAME : "com.androidweblottery.bjsc",
+                    app_icon      : "@mipmap/app_icon_bjsc",
+                    package_name  : "@string/app_name_bjsc",
+                    theme_splash  : "@style/AppTheme_splash_fun",
+                    CHANNEL_VALUE : "0301",
+            ]
+            buildConfigField "String", "product", "\"04\""
+        }
+        //pc蛋蛋 0401 - 0500
+        releasePCDD {
+            signingConfig signingConfigs.releaseSign
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            applicationIdSuffix ".pcdd"
+            manifestPlaceholders = [
+                    JPUSH_PKGNAME : "com.androidweblottery.pcdd",
+                    app_icon      : "@mipmap/app_icon_pcdd",
+                    package_name  : "@string/app_name_pcdd",
+                    theme_splash  : "@style/AppTheme_splash_fun",
+                    CHANNEL_VALUE : "0401",
+            ]
+            buildConfigField "String", "product", "\"05\""
+        }//快三 0501 - 0600
+        releaseK3 {
+            signingConfig signingConfigs.releaseSign
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            applicationIdSuffix ".k3"
+            manifestPlaceholders = [
+                    JPUSH_PKGNAME : "com.androidweblottery.k3",
+                    app_icon      : "@mipmap/app_icon_kuai3",
+                    package_name  : "@string/app_name_k3",
+                    theme_splash  : "@style/AppTheme_splash_lottery",
+                    CHANNEL_VALUE : "0501",
+            ]
+            buildConfigField "String", "product", "\"06\""
+        }
+
     }
 }
 

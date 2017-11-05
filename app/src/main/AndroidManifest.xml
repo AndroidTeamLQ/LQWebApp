@@ -32,15 +32,15 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/app_icon"
-        android:label="@string/app_name"
+        android:icon="${app_icon}"
+        android:label="${package_name}"
         android:supportsRtl="true"
         android:name=".MyApplication"
         android:theme="@style/AppTheme">
         <activity android:name=".SplashActivity"
                   android:configChanges="orientation|keyboardHidden|navigation"
                   android:screenOrientation="portrait"
-                  android:theme="@style/AppTheme2"
+                  android:theme="${theme_splash}"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -61,6 +61,9 @@
             android:screenOrientation="portrait"/>
 
 
+        <meta-data
+            android:name="CHANNEL"
+            android:value="${CHANNEL_VALUE}"/>
 
     </application>
 

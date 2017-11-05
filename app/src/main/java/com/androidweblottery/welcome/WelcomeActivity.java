@@ -13,6 +13,7 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 
+import com.androidweblottery.BuildConfig;
 import com.androidweblottery.HomeActivity;
 import com.androidweblottery.R;
 
@@ -28,7 +29,13 @@ import java.util.ArrayList;
 public class WelcomeActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private TextView btn;
-    private int[] zyIcons = new int[]{R.mipmap.fun_1, R.mipmap.fun_2};
+    private int[] icons_fun = new int[]{R.mipmap.fun_1, R.mipmap.fun_2};
+    private int[] icons_lottery = new int[]{R.mipmap.lottery_1, R.mipmap.lottery_2};
+    private int[] icons_ssc = new int[]{R.mipmap.introduce_1, R.mipmap.introduce_2};
+    private int[] icons_bjsc = new int[]{R.mipmap.fun_5, R.mipmap.fun_6};
+    private int[] icons_pcdd = new int[]{R.mipmap.fun_3, R.mipmap.fun_4};
+    private int[] icons_k3 = new int[]{R.mipmap.introduce_3, R.mipmap.introduce_4};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,16 +95,30 @@ public class WelcomeActivity extends AppCompatActivity {
     private ArrayList<Fragment> fragments = new ArrayList<Fragment>();
 
     private void initFragment() {
-        int[] icons = zyIcons;
-//        if (BuildConfig.product.equals("04")) {
-//            icons = a8Icons;
-//        } else if (BuildConfig.product.equals("17")) {
-//            icons = dplIcons;
-//            btn.setText("");
-//            btn.setBackgroundResource(R.drawable.dpl_skip_btn);
-//        } else {
-//            icons = zyIcons;
-//        }
+        int[] icons;
+        switch (BuildConfig.product){
+            case "01":
+                icons = icons_fun;
+                break;
+            case "02":
+                icons = icons_lottery;
+                break;
+            case "03":
+                icons = icons_ssc;
+                break;
+            case "04":
+                icons = icons_bjsc;
+                break;
+            case "05":
+                icons = icons_pcdd;
+                break;
+            case "06":
+                icons = icons_k3;
+                break;
+            default:
+                icons = icons_fun;
+        }
+
         for (int i = 0; i < icons.length; i++) {
             WelcomeFragment fragment = new WelcomeFragment();
             Bundle bunble = new Bundle();
