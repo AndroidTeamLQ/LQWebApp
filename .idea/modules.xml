@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidWebLottery.iml" filepath="$PROJECT_DIR$/AndroidWebLottery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LQWebApp.iml" filepath="$PROJECT_DIR$/LQWebApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

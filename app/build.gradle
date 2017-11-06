@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.androidweblottery"
         minSdkVersion 15
-        targetSdkVersion 26
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
 
@@ -50,7 +50,7 @@ android {
             debuggable false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-        //五福娱乐  0001 - 0100
+        //五福娱乐  1001 - 1100
         releaseFun {
             signingConfig signingConfigs.releaseSign
             minifyEnabled false
@@ -62,7 +62,7 @@ android {
                     app_icon      : "@mipmap/app_icon_fun",
                     package_name  : "@string/app_name_fun",
                     theme_splash  : "@style/AppTheme_splash_fun",
-                    CHANNEL_VALUE : "0001",
+                    CHANNEL_VALUE : "1001",
             ]
             buildConfigField "String", "product", "\"01\""
         }
@@ -147,7 +147,13 @@ android {
         }
 
     }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
 }
+
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -157,16 +163,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
-
-    //Retrofit
-    compile 'com.squareup.retrofit2:retrofit:2.3.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
-    compile 'com.squareup.retrofit2:retrofit-adapters:2.3.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
-    //rxjava2
-    compile 'io.reactivex.rxjava2:rxjava:2.1.5'
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
     //butterknife
     compile 'com.jakewharton:butterknife:8.4.0'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
@@ -174,5 +170,8 @@ dependencies {
     //极光推送
     compile 'cn.jiguang.sdk:jpush:3.0.9'
     compile 'cn.jiguang.sdk:jcore:1.1.7'
+    //bmob表
+    compile 'cn.bmob.android:http-legacy:1.0'
+    compile 'cn.bmob.android:bmob-sdk:3.5.5'
 
 }

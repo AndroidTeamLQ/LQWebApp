@@ -4,17 +4,25 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import android.util.Log;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
+import com.androidweblottery.bean.Config;
+import com.androidweblottery.utils.AppUtils;
 import com.androidweblottery.utils.CacheUtils;
 import com.androidweblottery.utils.ConstantUtils;
+import com.androidweblottery.utils.ManifestUtils;
+import com.androidweblottery.utils.VersionUtils;
 import com.androidweblottery.welcome.WelcomeActivity;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.FindListener;
 
 public class SplashActivity extends BaseActivity {
 
@@ -39,10 +47,33 @@ public class SplashActivity extends BaseActivity {
         ButterKnife.bind(this);
 
 
-
         mBg.setBackgroundResource(R.mipmap.splash_bg);
-        delayToNext();
+        reqConfig();
 
+
+    }
+
+    private void reqConfig() {
+        BmobQuery<Config> query = new BmobQuery<>();
+        query.addWhereEqualTo("appName", AppUtils.getAppName(this));
+        Log.e("bmob", AppUtils.getAppName(this));
+        Log.e("bmob", VersionUtils.getVersionName(this));
+        Log.e("bmob", ManifestUtils.getMetaDataValue(this, "CHANNEL"));
+        query.addWhereEqualTo("version", VersionUtils.getVersionName(this));
+        query.addWhereEqualTo("channel", ManifestUtils.getMetaDataValue(this, "CHANNEL"));
+        query.findObjects(new FindListener<Config>() {
+            @Override
+            public void done(List<Config> list, BmobException e) {
+                if (list != null && list.size() > 0) {
+                    Config configBean = list.get(0);
+                    if (configBean.isGoNative()) {
+                        //TODO
+                    } else {
+                        delayToNext();
+                    }
+                }
+            }
+        });
     }
 
     /**
@@ -77,7 +108,7 @@ public class SplashActivity extends BaseActivity {
             @Override
             public void run() {
 
-                    loadMainView();
+                loadMainView();
             }
         }, 1500);
     }
