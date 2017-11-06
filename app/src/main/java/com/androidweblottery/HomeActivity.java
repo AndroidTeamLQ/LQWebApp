@@ -3,6 +3,7 @@ package com.androidweblottery;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
@@ -10,6 +11,8 @@ import android.webkit.WebViewClient;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.androidweblottery.utils.CacheUtils;
+import com.androidweblottery.utils.ConstantUtils;
 import com.androidweblottery.utils.WebViewUtil;
 
 import butterknife.BindView;
@@ -30,6 +33,7 @@ public class HomeActivity extends BaseActivity {
     @BindView(R.id.webview_wap)
     WebView mWebView;
 
+    private static final String TAG = "HomeActivity";
 
     private final String URL_FUN = "http://api10.wfc0000.com";
 
@@ -75,8 +79,11 @@ public class HomeActivity extends BaseActivity {
             }
 
         });
+        
+        String url = CacheUtils.getString(this, ConstantUtils.URL,URL_FUN);
 
-        mWebView.loadUrl(URL_FUN);
+        Log.d(TAG, "initWebView: " + url);
+        mWebView.loadUrl(url);
     }
 
 

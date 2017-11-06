@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -53,6 +54,8 @@ public class SplashActivity extends BaseActivity {
 
     }
 
+    private String url = "";
+
     private void reqConfig() {
         BmobQuery<Config> query = new BmobQuery<>();
         query.addWhereEqualTo("appName", AppUtils.getAppName(this));
@@ -66,6 +69,9 @@ public class SplashActivity extends BaseActivity {
             public void done(List<Config> list, BmobException e) {
                 if (list != null && list.size() > 0) {
                     Config configBean = list.get(0);
+                    if(!TextUtils.isEmpty(configBean.getUrl())){
+                        CacheUtils.putString(SplashActivity.this,ConstantUtils.URL,configBean.getUrl());
+                    }
                     if (configBean.isGoNative()) {
                         //TODO跳转到原生
                     } else {

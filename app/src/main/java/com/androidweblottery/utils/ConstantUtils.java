@@ -7,4 +7,5 @@ package com.androidweblottery.utils;
 public class ConstantUtils {
 
     public static final String VERSION_CODE = "version_code";
+    public static final String URL = "url";
 }

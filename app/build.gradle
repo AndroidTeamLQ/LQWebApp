@@ -62,7 +62,7 @@ android {
                     app_icon      : "@mipmap/app_icon_fun",
                     package_name  : "@string/app_name_fun",
                     theme_splash  : "@style/AppTheme_splash_fun",
-                    CHANNEL_VALUE : "1001",
+                    CHANNEL_VALUE : "wandoujia",
             ]
             buildConfigField "String", "product", "\"01\""
         }
