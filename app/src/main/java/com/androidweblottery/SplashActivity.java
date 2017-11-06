@@ -67,7 +67,7 @@ public class SplashActivity extends BaseActivity {
                 if (list != null && list.size() > 0) {
                     Config configBean = list.get(0);
                     if (configBean.isGoNative()) {
-                        //TODO
+                        //TODO跳转到原生
                     } else {
                         delayToNext();
                     }
