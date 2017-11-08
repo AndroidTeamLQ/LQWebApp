@@ -59,10 +59,11 @@ android {
             applicationIdSuffix ".fun"
             manifestPlaceholders = [
                     JPUSH_PKGNAME : "com.androidweblottery.fun",
+                    JPUSH_APPKEY : "ba9a8513382ea03960b9d551",
                     app_icon      : "@mipmap/app_icon_fun",
                     package_name  : "@string/app_name_fun",
                     theme_splash  : "@style/AppTheme_splash_fun",
-                    CHANNEL_VALUE : "wandoujia",
+                    CHANNEL_VALUE : "91",
             ]
             buildConfigField "String", "product", "\"01\""
         }
@@ -75,6 +76,7 @@ android {
             applicationIdSuffix ".lottery"
             manifestPlaceholders = [
                     JPUSH_PKGNAME : "com.androidweblottery.lottery",
+                    JPUSH_APPKEY  : "22d5aed50638043297b665b3",
                     app_icon      : "@mipmap/app_icon_lottery",
                     package_name  : "@string/app_name_lottery",
                     theme_splash  : "@style/AppTheme_splash_lottery",
@@ -91,6 +93,7 @@ android {
             applicationIdSuffix ".ssc"
             manifestPlaceholders = [
                     JPUSH_PKGNAME : "com.androidweblottery.ssc",
+                    JPUSH_APPKEY  : "b96ec7145da2ef4228263527",
                     app_icon      : "@mipmap/app_icon_ssc",
                     package_name  : "@string/app_name_ssc",
                     theme_splash  : "@style/AppTheme_splash_lottery",
@@ -107,6 +110,7 @@ android {
             applicationIdSuffix ".bjsc"
             manifestPlaceholders = [
                     JPUSH_PKGNAME : "com.androidweblottery.bjsc",
+                    JPUSH_APPKEY  : "a6547df0c56b0e7a457652b6",
                     app_icon      : "@mipmap/app_icon_bjsc",
                     package_name  : "@string/app_name_bjsc",
                     theme_splash  : "@style/AppTheme_splash_fun",
@@ -123,6 +127,7 @@ android {
             applicationIdSuffix ".pcdd"
             manifestPlaceholders = [
                     JPUSH_PKGNAME : "com.androidweblottery.pcdd",
+                    JPUSH_APPKEY  : "fb0a4cecd1a471fd26f32917",
                     app_icon      : "@mipmap/app_icon_pcdd",
                     package_name  : "@string/app_name_pcdd",
                     theme_splash  : "@style/AppTheme_splash_fun",
@@ -138,6 +143,7 @@ android {
             applicationIdSuffix ".k3"
             manifestPlaceholders = [
                     JPUSH_PKGNAME : "com.androidweblottery.k3",
+                    JPUSH_APPKEY  : "77622c6db18737ce202b42aa",
                     app_icon      : "@mipmap/app_icon_kuai3",
                     package_name  : "@string/app_name_k3",
                     theme_splash  : "@style/AppTheme_splash_lottery",

@@ -12,3 +12,5 @@
 .idea/instapk.xml
 instapk.log*
 /.hgignore
+/.idea/
+app/libs/
